@@ -95,9 +95,9 @@ final class DiskCache {
             logError(e);
             return null;
         } finally {
-            if (snapshot != null) {
-                snapshot.close();
-            }
+           // if (snapshot != null) {
+          //     snapshot.close();
+          //  }
         }
     }
 
