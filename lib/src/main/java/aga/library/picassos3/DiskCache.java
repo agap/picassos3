@@ -94,11 +94,7 @@ final class DiskCache {
         } catch (IOException e) {
             logError(e);
             return null;
-        } finally {
-           // if (snapshot != null) {
-          //     snapshot.close();
-          //  }
-        }
+        } 
     }
 
     public void put(@NonNull final Uri uri, @NonNull final InputStream in) {
