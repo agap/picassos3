@@ -94,11 +94,7 @@ final class DiskCache {
         } catch (IOException e) {
             logError(e);
             return null;
-        } finally {
-            if (snapshot != null) {
-                snapshot.close();
-            }
-        }
+        } 
     }
 
     public void put(@NonNull final Uri uri, @NonNull final InputStream in) {
@@ -138,7 +134,7 @@ final class DiskCache {
     }
 
     private String toKey(@NonNull final Uri uri) {
-        final String key = uri.getLastPathSegment().toLowerCase();
+        final String key = uri.getPath().toLowerCase()
         final String cleanKey = key.replaceAll("[^a-zA-Z0-9]", "");
         final int length = cleanKey.length();
 
